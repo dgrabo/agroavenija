@@ -19,7 +19,7 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
       ),
       centerTitle: true,
       leading: Container(
-        color: Colors.blue,
+        color: Colors.white,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [

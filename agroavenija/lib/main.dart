@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'header_kupac.dart';
 
@@ -37,6 +38,40 @@ class _MyAppExtState extends State<MyAppExt> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: header_kupac(),
+      body: Container(
+        color: Colors.grey[400],
+        child: Column(
+          children: [
+            Container(
+              color: Colors.white,
+              width: double.infinity,
+              height: 90,
+              child: Container(
+                width: 200,
+                alignment: Alignment.center,
+                child: Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {},
+                      icon:
+                          SvgPicture.asset('assets/icons/fi-rs-map-marker.svg'),
+                    ),
+                    Text('Trenutna lokacija')
+                  ],
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 60,
+              color: Colors.white,
+              child: Center(
+                child: Text('Search bar - kasnije dodati'),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
