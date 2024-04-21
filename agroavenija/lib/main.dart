@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+import 'header_kupac.dart';
 
 void main() {
   runApp(MyApp());
@@ -35,37 +36,7 @@ class _MyAppExtState extends State<MyAppExt> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Container(
-          color: Colors.blue,
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset('assets/icons/fi-rs-user.svg'),
-              ),
-              Expanded(
-                child: Text(
-                  'Ivo',
-                  // overflow: TextOverflow.ellipsis,
-                  softWrap: false,
-                ),
-              )
-            ],
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/fi-rs-map.svg')),
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
-          ),
-        ],
-      ),
+      appBar: header_kupac(),
     );
   }
 }
