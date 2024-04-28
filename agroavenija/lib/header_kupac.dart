@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'header_kupac_settings.dart';
 
 // extracto klasu header_kupac da se može koristiti na ostalim screenovima
 class header_kupac extends StatelessWidget implements PreferredSizeWidget {
@@ -27,21 +28,28 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
               onPressed: () {},
               icon: SvgPicture.asset('assets/icons/fi-rs-user.svg'),
             ),
-            Text(
-              'Ivo Ivić',
-              // overflow: TextOverflow.ellipsis,
-              softWrap: false,
-            ),
+            // Text(
+            //   'Ivo Ivić',
+            //   // overflow: TextOverflow.ellipsis,
+            //   softWrap: false,
+            // ),
           ],
         ),
       ),
       leadingWidth: 130,
       actions: <Widget>[
         IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset('assets/icons/fi-rs-map.svg')),
-        IconButton(
           onPressed: () {},
+          icon: SvgPicture.asset('assets/icons/fi-rs-map.svg'),
+        ),
+        IconButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => MyApp(),
+              ),
+            );
+          },
           icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
         ),
       ],
