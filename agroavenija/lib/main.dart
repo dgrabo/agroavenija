@@ -1,8 +1,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:supabase_flutter/supabase_flutter.dart';
 // import 'package:flutter/widgets.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'header_kupac.dart';
 import 'kupac_glavni_menu.dart';
 import 'opg_glavni_menu.dart';
