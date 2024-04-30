@@ -1,6 +1,8 @@
+import 'package:agroavenija/map_kupac.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'header_kupac_settings.dart';
+import 'kupac_settings.dart';
+// import 'main.dart';
 
 // extracto klasu header_kupac da se može koristiti na ostalim screenovima
 class header_kupac extends StatelessWidget implements PreferredSizeWidget {
@@ -14,7 +16,17 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.white,
-      title: SizedBox(
+      title: /*IconButton(
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (BuildContext context) => MyApp(),
+            ),
+          );
+        },
+        icon: SvgPicture.asset('assets/images/agroavenija-logo.png'),
+      ),*/
+          SizedBox(
         child: Image.asset('assets/images/agroavenija-logo.png'),
         height: 80.0,
       ),
@@ -39,14 +51,20 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 130,
       actions: <Widget>[
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) => map_kupac(),
+              ),
+            );
+          },
           icon: SvgPicture.asset('assets/icons/fi-rs-map.svg'),
         ),
         IconButton(
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (BuildContext context) => MyApp(),
+                builder: (BuildContext context) => settingsKupac(),
               ),
             );
           },
