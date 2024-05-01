@@ -21,8 +21,8 @@ Technology used: Flutter, Supabase
    You can find the SDK Manager under "Tools > SDK Manager" in Android Studio. 
    This is crucial for running the emulator and for building projects targeting various Android versions. 
    
-4. **In terminal or command line**, type **'flutter doctor'** which will check your Flutter environment and show the installed versions of Flutter and Dart SDKs. 
-If there is message 'No issues found!', you should be good to go. You can also type 'flutter --version' to get information about the installed version of Flutter only.
+4. **In terminal or command line**, type `flutter doctor` which will check your Flutter environment and show the installed versions of Flutter and Dart SDKs. 
+If there is message `'No issues found!'`, you should be good to go. You can also type `flutter --version` to get information about the installed version of Flutter only.
 
 5. **Supabase Account**  
    Since this app uses Supabase, you'll need a Supabase account. Create one at [this website](https://supabase.com/).
@@ -43,12 +43,12 @@ Follow these steps to get your development environment set up:
 1. **Clone the Repository**  
    Start by cloning the project repository to your local machine. 
    To do this, navigate to the project directory where you want to clone the repository, open your terminal and run following command:  
-   git clone https://github.com/dgrabo/agroavenija.git
+   `git clone https://github.com/dgrabo/agroavenija.git`
 
 2. **Install Dependencies**  
    Once the repository is cloned, you'll need to install all of the required dependencies.
    Navigate to the project directory if you haven't already and run:  
-   flutter pub get
+   `flutter pub get`
 
 <!-- 3. Setup Environment Variables 
     Trebam ovo dodatno pogledati još.
@@ -58,14 +58,14 @@ Follow these steps to get your development environment set up:
    To run the application, ensure that you have an emulator running or a device connected.
    If you are running it in VSCode, in bottom right corner of VSCode select the emulator for running the app. 
    After loading the emulator, position yourself in main.dart and press F5 to run the app on emulator.
-   You can also run the app by typing 'flutter run' command in your terminal.
+   You can also run the app by typing `flutter run` command in your terminal.
 
 # Troubleshooting
 
 If you encounter any issues during the installation, consider the following common troubleshooting steps:
 
-- Ensure your Flutter SDK is up to date with 'flutter upgrade'.
-- If you get errors related to missing packages or dependencies, try running 'fluttter clean' followed by 'flutter pub get again.
+- Ensure your Flutter SDK is up to date with `flutter upgrade`.
+- If you get errors related to missing packages or dependencies, try running `fluttter clean` followed by `flutter pub get` again.
 <!-- - Check that your environment variables are set correctly.
     Trebam provjeriti ovo.
  -->
