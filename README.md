@@ -42,7 +42,7 @@ Follow these steps to get your development environment set up:
 
 1. **Clone the Repository**  
    Start by cloning the project repository to your local machine. 
-   To do this, navigate to the project directory where you want to clone the repository, open your terminal and run following command:  
+   Open your terminal, navigate to the directory where you want to store the project and run:  
    `git clone https://github.com/dgrabo/agroavenija.git`
 
 2. **Install Dependencies**  
@@ -55,10 +55,11 @@ Follow these steps to get your development environment set up:
  -->
 
 3. **Run the Applicaiton**  
-   To run the application, ensure that you have an emulator running or a device connected.
-   If you are running it in VSCode, in bottom right corner of VSCode select the emulator for running the app. 
-   After loading the emulator, position yourself in main.dart and press F5 to run the app on emulator.
-   You can also run the app by typing `flutter run` command in your terminal.
+   Before running the application, ensure you have Flutter installed and either an emulator running or a device connected.  
+   If you are using VSCode, you can select the emulator from the bottom right corner of the IDE.  
+   Position yourself in the `main.dart` file and press `F5` to start the app on the emulator.  
+   Alternatively, you can run the application from the terminal:  
+   `flutter run` 
 
 # Troubleshooting
 
