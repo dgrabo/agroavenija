@@ -7,7 +7,7 @@ Technology used: Flutter, Supabase
 
 1. Flutter Installation 
 You must have Flutter installed on your system. 
-For detailed instructions, visiti the Flutter installation guide [https://docs.flutter.dev/get-started/install].
+For detailed instructions, visit the [Flutter installation guide](https://docs.flutter.dev/get-started/install).
 2. IDE Setup 
 An IDE with Flutter support, such as Android Studio or Visual Studio Code, is required. 
 Ensure that you have the Flutter and Dart plugins installed. 
