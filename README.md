@@ -54,7 +54,7 @@ Follow these steps to get your development environment set up:
     Trebam ovo dodatno pogledati još.
  -->
 
-3. **Run the Applicaiton**  
+3. **Run the Application**  
    Before running the application, ensure you have Flutter installed and either an emulator running or a device connected.  
    If you are using VSCode, you can select the emulator from the bottom right corner of the IDE.  
    Position yourself in the `main.dart` file and press `F5` to start the app on the emulator.  
