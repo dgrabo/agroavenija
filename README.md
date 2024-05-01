@@ -5,21 +5,25 @@ Technology used: Flutter, Supabase
 
 # Prerequisites
 
-1. **Flutter Installation** 
+1. **Flutter Installation**  
    You must have Flutter installed on your system.
    For detailed instructions, visit the [Flutter installation guide](https://docs.flutter.dev/get-started/install).
+
 2. **IDE Setup**  
    An IDE with Flutter support, such as Android Studio or Visual Studio Code, is required. 
    Ensure that you have the Flutter and Dart plugins installed. 
    For Visual Studio Code, you can find these in the Extensions marketplace. In Android Studio, these can be installed from the Plugins section in the IDE settings.
-3. **Android Studio and Emulator Setup ** 
+
+3. **Android Studio and Emulator Setup**  
    Although the code is written in Visual Studio Code, an emulator from Android Studio is used to run and test the application.
    Therefore, Android Studio must be installed, not just for coding but also to utilize the Android emulator. 
    Within Android Studio, ensure you have accessed the SDK Manager to install the Android SDK. 
    You can find the SDK Manager under "Tools > SDK Manager" in Android Studio. 
    This is crucial for running the emulator and for building projects targeting various Android versions. 
-4. In terminal or command line, type **'flutter doctor'** which will check your Flutter environment and show the installed versions of Flutter and Dart SDKs. 
+   
+4. **In terminal or command line**, type **'flutter doctor'** which will check your Flutter environment and show the installed versions of Flutter and Dart SDKs. 
 If there is message 'No issues found!', you should be good to go. You can also type 'flutter --version' to get information about the installed version of Flutter only.
+
 5. **Supabase Account**  
    Since this app uses Supabase, you'll need a Supabase account. Create one at [this website](https://supabase.com/).
 <!-- 4. Environment Setup: 
@@ -28,6 +32,7 @@ If there is message 'No issues found!', you should be good to go. You can also t
  -->
 6. **Git**  
    Basic knowledge of Git is recommended, as you will need it to clone the repository.
+
 7. **Mobile Device or Emulator**  
    To run the app, you will need either a physical mobile device or an emulator set up through your IDE.
 
