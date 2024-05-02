@@ -75,24 +75,21 @@ class settingsScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 16.0),
-            TextField(
+            TextFormField(
               decoration: InputDecoration(
                 labelText: 'Ime i prezime',
-                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 16.0),
-            TextField(
+            TextFormField(
               decoration: InputDecoration(
                 labelText: 'e-mail',
-                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 16.0),
-            TextField(
+            TextFormField(
               decoration: InputDecoration(
                 labelText: 'Broj mobitela',
-                border: OutlineInputBorder(),
               ),
             ),
             SizedBox(height: 24.0),
