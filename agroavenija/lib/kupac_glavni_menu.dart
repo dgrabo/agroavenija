@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'header_kupac.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class KupacMenu extends StatefulWidget {
   const KupacMenu({super.key});
@@ -41,19 +42,20 @@ class _KupacMenuState extends State<KupacMenu> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(10.0),
-                    child: Row(children: [
-                      Padding(
-                        padding: const EdgeInsets.only(left: 22.0),
-                        child: Text(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 25.0),
+                      child: Row(children: [
+                        SvgPicture.asset('assets/icons/fi-rs-map-marker.svg'),
+                        Text(
                           textAlign: TextAlign.start,
-                          'Trenutna lokacija',
+                          '   Trenutna lokacija',
                           style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                    ]),
+                      ]),
+                    ),
                   ),
                   // Search bar
                   Padding(
@@ -75,12 +77,21 @@ class _KupacMenuState extends State<KupacMenu> {
                     height: 10,
                   ),
                   // Vaši favoriti
-                  Text(
-                    'VAŠI FAVORITI',
-                    textAlign: TextAlign.start,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 28.0),
+                        child: Text(
+                          'VAŠI FAVORITI',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.favorite)
+                    ],
                   ),
                   SizedBox(
                     height: 20,
@@ -121,30 +132,72 @@ class _KupacMenuState extends State<KupacMenu> {
                     ),
                   ),
                   // OPG mjeseca
-                  Text(
-                    'OPG MJESECA',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  SizedBox(
+                    height: 30,
                   ),
-                  ListTile(
-                    leading: Icon(Icons.star),
-                    title: Text('Malo o OPG-U'),
-                    subtitle: Text(
-                      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-                    ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 28.0),
+                        child: Text(
+                          'OPG MJESECA',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                      Icon(Icons.diamond)
+                    ],
                   ),
-                  // Contact OPG section
-                  ListTile(
-                    leading: Icon(Icons.email),
-                    title: Text('opg@gmail.com'),
-                    trailing: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.facebook),
-                        Icon(Icons.facebook),
-                        Icon(Icons.camera),
-                      ],
+                  // ListTile(
+                  //   leading: Icon(Icons.star),
+                  //   title: Text('Malo o OPG-U'),
+                  //   subtitle: Text(
+                  //     'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+                  //   ),
+                  // ),
+                  // // Contact OPG section
+                  // ListTile(
+                  //   leading: Icon(Icons.email),
+                  //   title: Text('opg@gmail.com'),
+                  //   trailing: Row(
+                  //     mainAxisSize: MainAxisSize.min,
+                  //     children: [
+                  //       Icon(Icons.facebook),
+                  //       Icon(Icons.facebook),
+                  //       Icon(Icons.camera),
+                  //     ],
+                  //   ),
+                  // ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Card(
+                      color: Colors
+                          .lightGreen[100], // Background color of the card
+                      child: SizedBox(
+                        width: 200,
+                        height: 150,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(Icons.star_border,
+                                size: 24, color: Colors.black),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'OPG #1',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ],
