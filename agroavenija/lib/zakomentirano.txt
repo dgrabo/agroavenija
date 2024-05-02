@@ -1,0 +1,158 @@
+// gumbi kupac i opg kod prijave
+
+//   children: [
+                //     ElevatedButton(
+                //       style: ElevatedButton.styleFrom(
+                //         backgroundColor: isKupac
+                //             ? Colors.green
+                //             : Colors.white, // Color changes based on selection
+                //         foregroundColor: isKupac
+                //             ? Colors.white
+                //             : Colors
+                //                 .black, // Text color changes based on selection
+                //         shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(30.0),
+                //             side: BorderSide(
+                //                 color: isKupac
+                //                     ? Colors.green
+                //                     : Colors.grey) // Border color
+                //             ),
+                //         padding:
+                //             EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                //       ),
+                //       onPressed: () {
+                //         setState(() {
+                //           isKupac = true;
+                //         });
+                //       },
+                //       child: Text('KUPAC'),
+                //     ),
+                //     SizedBox(width: 10), // Space between buttons
+                //     ElevatedButton(
+                //       style: ElevatedButton.styleFrom(
+                //         backgroundColor: !isKupac ? Colors.green : Colors.white,
+                //         foregroundColor: !isKupac ? Colors.white : Colors.black,
+                //         shape: RoundedRectangleBorder(
+                //             borderRadius: BorderRadius.circular(30.0),
+                //             side: BorderSide(
+                //                 color: !isKupac ? Colors.green : Colors.grey)),
+                //         padding:
+                //             EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                //       ),
+                //       onPressed: () {
+                //         setState(() {
+                //           isKupac = false;
+                //         });
+                //       },
+                //       child: Text('OPG'),
+                //     ),
+                //   ],
+                // ),
+
+
+// ostatak stranice
+
+// SizedBox(
+              //   height: 50,
+              // ),
+              // // Toggle buttons for KUPAC/OPG might be here
+              // Text(
+              //   'Prijava Kupac',
+              //   style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              // ),
+              // SizedBox(height: 10),
+
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.start,
+              //   children: [
+              //     Text('Nemate račun?', textAlign: TextAlign.start),
+              //     TextButton(
+              //       onPressed: () {},
+              //       child: Text(
+              //         'Registrirajte se!',
+              //         style: TextStyle(
+              //           color: Colors.black,
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(height: 20),
+              // TextFormField(
+              //   decoration: InputDecoration(
+              //     labelText: 'E-mail',
+              //     hintText: 'Unesite vašu e-mail adresu',
+              //   ),
+              // ),
+              // TextFormField(
+              //   obscureText: true,
+              //   decoration: InputDecoration(
+              //     labelText: 'Lozinka',
+              //     hintText: 'Unesite lozinku',
+              //     suffixIcon: Icon(Icons.visibility_off),
+              //   ),
+              // ),
+              // SizedBox(height: 10),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Row(
+              //       children: [
+              //         Checkbox(value: false, onChanged: (bool? value) {}),
+              //         Text('Zapamti me'),
+              //       ],
+              //     ),
+              //     TextButton(
+              //       onPressed: () {
+              //         // Forgot password screen action
+              //       },
+              //       child: Text('Zaboravili ste lozinku?'),
+              //     ),
+              //   ],
+              // ),
+              // SizedBox(height: 20),
+              // ElevatedButton(
+              //   style: ElevatedButton.styleFrom(
+              //     backgroundColor: Colors.green, // background color
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius:
+              //           BorderRadius.circular(30.0), // rounded corners
+              //     ),
+              //     padding: EdgeInsets.symmetric(vertical: 15), // button padding
+              //   ),
+              //   onPressed: () {
+              //     // Login action
+              //   },
+              //   child: Text('Prijava', style: TextStyle(fontSize: 18)),
+              // ),
+              // SizedBox(height: 20),
+              // Text('ili nastavite putem', textAlign: TextAlign.center),
+              // SizedBox(height: 10),
+              // Row(
+              //   mainAxisAlignment: MainAxisAlignment.center,
+              //   children: [
+              //     IconButton(
+              //       icon: Icon(Icons.facebook, color: Colors.blue),
+              //       onPressed: () {
+              //         // Facebook login action
+              //       },
+              //     ),
+              //     IconButton(
+              //       icon: Icon(Icons.g_mobiledata, color: Colors.red),
+              //       onPressed: () {
+              //         // Google login action
+              //       },
+              //     ),
+              //   ],
+              // )
+
+
+
+// void updateSelection(String role) {
+  //   setState(() {
+  //     isKupac = (role == 'KUPAC');
+  //     contentText = isKupac
+  //         ? "Content for KUPAC"
+  //         : "Content for OPG"; // Update the content text based on selection
+  //   });
+  // }

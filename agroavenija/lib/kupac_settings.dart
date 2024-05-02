@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'header_kupac.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
+import 'kupac_glavni_menu.dart';
 
 // class SettingsPage extends StatelessWidget {
 //   const SettingsPage({super.key});
@@ -31,27 +32,41 @@ class settingsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                // Ovdje dodajte logiku za odjavu
-              },
-              child: Text('Odjava'),
-              style: ElevatedButton.styleFrom(
-                foregroundColor:
-                    Colors.black, // promijenite boju ako je potrebno
-              ),
-            ),
-            SizedBox(height: 24.0),
-            Text(
-              'Postavke',
-              style: TextStyle(fontSize: 32.0, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Postavke',
+                  style: TextStyle(
+                    fontSize: 32.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextButton(
+                  onPressed: () {
+                    //
+                  },
+                  child: Text('Odjava'),
+                  style: ElevatedButton.styleFrom(
+                    foregroundColor: Colors.black, //
+                  ),
+                ),
+              ],
             ),
             SizedBox(height: 8.0),
-            OutlinedButton.icon(
-              icon: Icon(Icons.arrow_back),
-              label: Text('Povratak'),
+            TextButton.icon(
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+              label: Text(
+                'Glavni izbornik',
+                style: TextStyle(color: Colors.black),
+              ),
               onPressed: () {
-                Navigator.pop(context); // Vraćanje na prethodni ekran
+                Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => KupacMenu(),
+                ));
               },
             ),
             SizedBox(height: 16.0),

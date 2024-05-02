@@ -15,6 +15,7 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
       Size.fromHeight(kToolbarHeight); // Standard AppBar height
   Widget build(BuildContext context) {
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: Colors.white,
       title: /*IconButton(
         onPressed: () {
@@ -52,7 +53,8 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         IconButton(
           onPressed: () {
-            Navigator.of(context).push(
+            Navigator.pushReplacement(
+              context,
               MaterialPageRoute(
                 builder: (BuildContext context) => map_kupac(),
               ),
@@ -62,7 +64,8 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           onPressed: () {
-            Navigator.of(context).push(
+            Navigator.pushReplacement(
+              context,
               MaterialPageRoute(
                 builder: (BuildContext context) => settingsKupac(),
               ),
