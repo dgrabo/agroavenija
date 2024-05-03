@@ -111,48 +111,54 @@ class _LoginPageState extends State<LoginPage> {
               ? const Center(
                   child: CircularProgressIndicator(),
                 )
-              : ElevatedButton(
-                  onPressed: () async {
-                    final isValid = _formKey.currentState?.validate();
-                    if (isValid != true) {
-                      return;
-                    }
+              : Row(
+                  children: [
+                    TextButton(
+                      onPressed: () async {
+                        final isValid = _formKey.currentState?.validate();
+                        if (isValid != true) {
+                          return;
+                        }
 
-                    setState(() {
-                      _signUpLoading = true;
-                    });
+                        setState(() {
+                          _signUpLoading = true;
+                        });
 
-                    try {
-                      await client.auth.signUp(
-                        email: _emailContoller.text,
-                        password: _passwordContoller.text,
-                      );
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Success. Confirm your account.'),
-                        backgroundColor: Colors.red,
-                      ));
-                      setState(() {
-                        _signUpLoading = false;
-                      });
-                    } catch (e) {
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                        content: Text('Sign up failed'),
-                        backgroundColor: Colors.red,
-                      ));
-                      setState(() {
-                        _signUpLoading = false;
-                      });
-                    }
-                    setState(() {
-                      _signUpLoading = false;
-                    });
-                  },
-                  child: Text(
-                    'Registrirajte se!',
-                    style: TextStyle(
-                      color: Colors.black,
+                        try {
+                          await client.auth.signUp(
+                            email: _emailContoller.text,
+                            password: _passwordContoller.text,
+                          );
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            content: Text('Success. Confirm your account.'),
+                            backgroundColor: Colors.greenAccent,
+                          ));
+                          setState(() {
+                            _signUpLoading = false;
+                          });
+                        } catch (e) {
+                          ScaffoldMessenger.of(context)
+                              .showSnackBar(const SnackBar(
+                            content: Text('Sign up failed'),
+                            backgroundColor: Colors.red,
+                          ));
+                          setState(() {
+                            _signUpLoading = false;
+                          });
+                        }
+                        setState(() {
+                          _signUpLoading = false;
+                        });
+                      },
+                      child: Text(
+                        'Registrirajte se!',
+                        style: TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
                     ),
-                  ),
+                  ],
                 ),
           SizedBox(height: 10),
           TextFormField(

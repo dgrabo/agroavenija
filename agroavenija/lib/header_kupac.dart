@@ -49,7 +49,6 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      leadingWidth: 130,
       actions: <Widget>[
         IconButton(
           onPressed: () {

@@ -1,32 +1,44 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-import 'header_kupac.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
-// import 'kupac_glavni_menu.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-// class SettingsPage extends StatelessWidget {
-//   const SettingsPage({super.key});
+class OpgSettings extends StatefulWidget {
+  const OpgSettings({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: header_kupac(),
-//     );
-//   }
-// }
-
-class settingsKupac extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return settingsScreen();
-  }
+  State<OpgSettings> createState() => _OpgSettingsState();
 }
 
-class settingsScreen extends StatelessWidget {
+class _OpgSettingsState extends State<OpgSettings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header_kupac(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Color.fromARGB(255, 163, 232, 84),
+        title: SizedBox(
+          child: Image.asset('assets/images/agroavenija-logo.png'),
+          height: 80.0,
+        ),
+        centerTitle: true,
+        leading: Container(
+          color: const Color.fromARGB(255, 163, 232, 84),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset('assets/icons/fi-rs-user.svg'),
+              ),
+            ],
+          ),
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
+          ),
+        ],
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Column(
@@ -43,12 +55,7 @@ class settingsScreen extends StatelessWidget {
                   ),
                 ),
                 TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(
-                      context,
-                      '/prijava-kupac-opg',
-                    );
-                  },
+                  onPressed: () {},
                   child: Text('Odjava'),
                   style: ElevatedButton.styleFrom(
                     foregroundColor: Colors.black, //
@@ -67,7 +74,7 @@ class settingsScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
               onPressed: () {
-                Navigator.pushNamed(context, '/kupac-glavni-menu');
+                Navigator.pushNamed(context, '/opg-glavni-menu');
               },
             ),
             SizedBox(height: 16.0),

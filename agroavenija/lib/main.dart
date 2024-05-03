@@ -1,4 +1,5 @@
 // import 'package:flutter/cupertino.dart';
+import 'package:agroavenija/common.dart';
 import 'package:flutter/material.dart';
 import 'registracija_kupac.dart';
 import 'registracija_opg.dart';
@@ -11,27 +12,25 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import 'kupac_glavni_menu.dart';
 import 'opg_glavni_menu.dart';
 import 'glavnaPrijava.dart';
+import 'kupac_settings.dart';
+import 'opg_settings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Supabase.initialize(
     // SUPABASE_URL
-    url: 'SUPABASE_URL',
+    url: 'url',
     // SUPABASE_ANON_KEY
-    anonKey: 'SUPABASE_URL',
+    anonKey: 'key',
   );
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
+  // User? _user;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -43,9 +42,46 @@ class _MyAppState extends State<MyApp> {
         '/opg-glavni-menu': (context) => OpgGlavniMenu(),
         '/prijava-kupac-opg': (context) => LoginPage(),
         '/kupac-glavni-menu': (context) => KupacMenu(),
+        '/kupac-settings': (context) => settingsKupac(),
+        '/opg-settings': (context) => OpgSettings(),
       },
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: const MyWidget(),
+    );
+  }
+}
+
+class MyWidget extends StatefulWidget {
+  const MyWidget({super.key});
+
+  @override
+  State<MyWidget> createState() => _MyWidgetState();
+}
+
+class _MyWidgetState extends State<MyWidget> {
+  User? _user;
+
+  @override
+  void initState() {
+    _getAuth();
+    super.initState();
+  }
+
+  Future<void> _getAuth() async {
+    setState(() {
+      _user = client.auth.currentUser;
+    });
+    client.auth.onAuthStateChange.listen((event) {
+      setState(() {
+        _user = event.session?.user;
+      });
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: _user == null ? const LoginPage() : const KupacMenu(),
     );
   }
 }
