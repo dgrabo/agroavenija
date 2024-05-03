@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
-import 'header_kupac.dart';
+// import 'header_kupac.dart';
 
 class OpgGlavniMenu extends StatefulWidget {
   const OpgGlavniMenu({super.key});
@@ -21,30 +21,28 @@ class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: header_kupac(),
+      appBar: AppBar(),
       body: Column(),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.lightGreen,
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.black54,
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
         items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.bar_chart),
-            label: 'Stats',
-          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.edit),
             label: 'Edit',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
             label: 'Calendar',
           ),
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
       ),
     );
   }

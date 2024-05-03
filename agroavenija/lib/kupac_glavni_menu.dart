@@ -1,3 +1,4 @@
+import 'package:agroavenija/common.dart';
 import 'package:flutter/material.dart';
 import 'header_kupac.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -171,35 +172,64 @@ class _KupacMenuState extends State<KupacMenu> {
                   //     ],
                   //   ),
                   // ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Card(
-                      color: Colors
-                          .lightGreen[100], // Background color of the card
-                      child: SizedBox(
-                        width: 200,
-                        height: 150,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(Icons.star_border,
-                                size: 24, color: Colors.black),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                'OPG #1',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16,
-                                  color: Colors.black,
-                                ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 28.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, '/kupac-settings');
+                          },
+                          child: Card(
+                            color: Colors.lightGreen[
+                                100], // Background color of the card
+                            child: SizedBox(
+                              width: 200,
+                              height: 150,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: <Widget>[
+                                  Expanded(
+                                      child: Image.asset(
+                                          'assets/images/agroavenija-logo.png')),
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      'OPG #1',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
                         ),
                       ),
-                    ),
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                        child: OutlinedButton(
+                          onPressed: () async {
+                            await client.auth.signOut();
+                          },
+                          child: Text(
+                            'Sign out',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      )
+                    ],
                   ),
+                  SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
             ),

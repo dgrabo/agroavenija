@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:agroavenija/common.dart';
 
 class KupacReg extends StatefulWidget {
   const KupacReg({super.key});
@@ -10,6 +11,19 @@ class KupacReg extends StatefulWidget {
 class _KupacRegState extends State<KupacReg> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool isCheckedRegKupac = false;
+
+  // bool _signInLoading = false;
+  bool _signUpLoadingReg = false;
+  final _emailContollerReg = TextEditingController();
+  final _passwordContollerReg = TextEditingController();
+  final _formKeyy = GlobalKey<FormState>();
+
+  @override
+  void dispose() {
+    _emailContollerReg.dispose();
+    _passwordContollerReg.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,10 +98,18 @@ class _KupacRegState extends State<KupacReg> {
             ),
             SizedBox(height: 10.0),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please fill in email address';
+                }
+                return null;
+              },
+              controller: _emailContollerReg,
               decoration: InputDecoration(
                 labelText: 'E-mail',
                 hintText: 'Unesite vašu e-mail adresu',
               ),
+              keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(height: 10.0),
             TextFormField(
@@ -105,6 +127,13 @@ class _KupacRegState extends State<KupacReg> {
             ),
             SizedBox(height: 10.0),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please fill password';
+                }
+                return null;
+              },
+              controller: _passwordContollerReg,
               decoration: InputDecoration(
                 labelText: 'Lozinka',
                 hintText: 'Unesite lozinku',
@@ -117,6 +146,13 @@ class _KupacRegState extends State<KupacReg> {
             ),
             SizedBox(height: 10.0),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please fill password';
+                }
+                return null;
+              },
+              controller: _passwordContollerReg,
               decoration: InputDecoration(
                 labelText: 'Ponovite lozinku',
                 hintText: 'Potvrdite vašu lozinku',
@@ -145,21 +181,59 @@ class _KupacRegState extends State<KupacReg> {
               ],
             ),
             SizedBox(height: 10.0),
-            ElevatedButton(
-              onPressed: () {
-                // Handle registration
-              },
-              child: Text(
-                'Registriraj me',
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-              ),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                padding: EdgeInsets.symmetric(vertical: 15.0),
-                textStyle: TextStyle(fontSize: 18.0),
-              ),
-            ),
+            _signUpLoadingReg
+                ? const Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : ElevatedButton(
+                    onPressed: () async {
+                      final isValid = _formKey.currentState?.validate();
+                      if (isValid != true) {
+                        return;
+                      }
+
+                      setState(() {
+                        _signUpLoadingReg = true;
+                      });
+
+                      try {
+                        await client.auth.signUp(
+                          email: _emailContollerReg.text,
+                          password: _passwordContollerReg.text,
+                        );
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text('Success. Confirm your account.'),
+                          backgroundColor: Colors.red,
+                        ));
+                        setState(() {
+                          _signUpLoadingReg = false;
+                        });
+                      } catch (e) {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(const SnackBar(
+                          content: Text('Sign up failed'),
+                          backgroundColor: Colors.red,
+                        ));
+                        setState(() {
+                          _signUpLoadingReg = false;
+                        });
+                      }
+                      setState(() {
+                        _signUpLoadingReg = false;
+                      });
+                    },
+                    child: Text(
+                      'Registriraj me',
+                      style: TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      padding: EdgeInsets.symmetric(vertical: 15.0),
+                      textStyle: TextStyle(fontSize: 18.0),
+                    ),
+                  ),
           ],
         ),
       ),

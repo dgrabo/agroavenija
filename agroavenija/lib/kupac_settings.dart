@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 import 'header_kupac.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
-import 'kupac_glavni_menu.dart';
+// import 'kupac_glavni_menu.dart';
 
 // class SettingsPage extends StatelessWidget {
 //   const SettingsPage({super.key});
@@ -44,7 +44,10 @@ class settingsScreen extends StatelessWidget {
                 ),
                 TextButton(
                   onPressed: () {
-                    //
+                    Navigator.pushNamed(
+                      context,
+                      '/prijava-kupac-opg',
+                    );
                   },
                   child: Text('Odjava'),
                   style: ElevatedButton.styleFrom(
@@ -64,9 +67,7 @@ class settingsScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.black),
               ),
               onPressed: () {
-                Navigator.of(context).pushReplacement(MaterialPageRoute(
-                  builder: (context) => KupacMenu(),
-                ));
+                Navigator.pushNamed(context, '/kupac-glavni-menu');
               },
             ),
             SizedBox(height: 16.0),

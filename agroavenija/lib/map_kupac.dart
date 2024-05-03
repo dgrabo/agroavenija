@@ -8,6 +8,16 @@ class map_kupac extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: header_kupac(),
+      body: Column(
+        children: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('Natrag'),
+          )
+        ],
+      ),
     );
   }
 }
