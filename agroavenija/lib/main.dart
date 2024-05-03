@@ -1,19 +1,19 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:agroavenija/common.dart';
 import 'package:flutter/material.dart';
-import 'registracija_kupac.dart';
-import 'registracija_opg.dart';
+import 'kupac/registracija_kupac.dart';
+import 'opg/registracija_opg.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 // import 'package:flutter/widgets.dart';
 // import 'package:flutter_svg/flutter_svg.dart';
 // import 'header_kupac.dart';
-import 'kupac_glavni_menu.dart';
-import 'opg_glavni_menu.dart';
+import 'kupac/kupac_glavni_menu.dart';
+import 'opg/opg_glavni_menu.dart';
 import 'glavnaPrijava.dart';
-import 'kupac_settings.dart';
-import 'opg_settings.dart';
+import 'kupac/kupac_settings.dart';
+import 'opg/opg_settings.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

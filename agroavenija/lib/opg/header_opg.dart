@@ -1,18 +1,18 @@
-import 'package:agroavenija/map_kupac.dart';
+import 'package:agroavenija/kupac/map_kupac.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'kupac_settings.dart';
+import '../kupac/kupac_settings.dart';
 // import 'main.dart';
 
-// extracto klasu header_kupac da se može koristiti na ostalim screenovima
-class header_kupac extends StatelessWidget implements PreferredSizeWidget {
-  const header_kupac({
+// extracto klasu header_opg da se može koristiti na ostalim screenovima
+// trenutno je ne koristim
+class header_opg extends StatelessWidget implements PreferredSizeWidget {
+  const header_opg({
     super.key,
   });
 
   @override
-  Size get preferredSize =>
-      Size.fromHeight(kToolbarHeight); // Standard AppBar height
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false,
@@ -52,25 +52,11 @@ class header_kupac extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: 130,
       actions: <Widget>[
         IconButton(
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => map_kupac(),
-              ),
-            );
-          },
+          onPressed: () {},
           icon: SvgPicture.asset('assets/icons/fi-rs-map.svg'),
         ),
         IconButton(
-          onPressed: () {
-            Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => settingsKupac(),
-              ),
-            );
-          },
+          onPressed: () {},
           icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
         ),
       ],

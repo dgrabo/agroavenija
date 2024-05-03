@@ -1,4 +1,4 @@
-import 'package:agroavenija/map_kupac.dart';
+import 'package:agroavenija/kupac/map_kupac.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'kupac_settings.dart';

@@ -2,7 +2,7 @@ import 'package:agroavenija/common.dart';
 import 'package:flutter/material.dart';
 // import 'registracija_kupac.dart';
 // import 'registracija_opg.dart';
-import 'registracija_kupac.dart' as regkupac;
+import 'kupac/registracija_kupac.dart' as regkupac;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
