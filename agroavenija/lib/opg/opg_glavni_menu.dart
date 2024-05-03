@@ -16,9 +16,9 @@ class OpgGlavniMenu extends StatefulWidget {
 class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
   int index = 1;
   final screens = [
-    Center(child: Text('ured')),
-    Center(child: Text('ured')),
-    Center(child: Text('ured')),
+    Center(child: Text('uredi')),
+    Center(child: Text('početna')),
+    Center(child: Text('kalendar')),
   ];
 
   @override
