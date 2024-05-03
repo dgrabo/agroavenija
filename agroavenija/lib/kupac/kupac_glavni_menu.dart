@@ -99,9 +99,9 @@ class _KupacMenuState extends State<KupacMenu> {
                   ),
                   // GridView.builder(
                   //   physics:
-                  //       NeverScrollableScrollPhysics(), // to disable GridView's scrolling
-                  //   shrinkWrap: true, // You won't see anything without this.
-                  //   itemCount: 8, // Replace with your data length
+                  //       NeverScrollableScrollPhysics(), 
+                  //   shrinkWrap: true, 
+                  //   itemCount: 8, 
                   //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   //     crossAxisCount: 4,
                   //     childAspectRatio: 4 / 2,
@@ -185,7 +185,7 @@ class _KupacMenuState extends State<KupacMenu> {
                           },
                           child: Card(
                             color: Colors.lightGreen[
-                                100], // Background color of the card
+                                100], // background color of the card
                             child: SizedBox(
                               width: 200,
                               height: 150,

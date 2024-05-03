@@ -76,6 +76,7 @@ class settingsScreen extends StatelessWidget {
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w500),
             ),
             SizedBox(height: 16.0),
+            // form polja za ime, prezime, email, broj mobitela
             TextFormField(
               decoration: InputDecoration(
                 labelText: 'Ime i prezime',
@@ -102,7 +103,7 @@ class settingsScreen extends StatelessWidget {
                 IconButton(
                   icon: Icon(Icons.facebook),
                   onPressed: () {
-                    // Handle Facebook button
+                    //
                   },
                 ),
               ],
