@@ -14,77 +14,42 @@ class OpgGlavniMenu extends StatefulWidget {
 }
 
 class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
-  int index = 1;
-  final screens = [
-    Center(child: Text('uredi')),
-    Center(child: Text('početna')),
-    Center(child: Text('kalendar')),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Color.fromARGB(255, 163, 232, 84),
-          title: SizedBox(
-            child: Image.asset('assets/images/agroavenija-logo.png'),
-            height: 80.0,
-          ),
-          centerTitle: true,
-          leading: Container(
-            color: const Color.fromARGB(255, 163, 232, 84),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset('assets/icons/fi-rs-user.svg'),
-                ),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            IconButton(
-              onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  '/opg-settings',
-                );
-              },
-              icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
-            ),
-          ],
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: Color.fromARGB(255, 163, 232, 84),
+        title: SizedBox(
+          child: Image.asset('assets/images/agroavenija-logo.png'),
+          height: 80.0,
         ),
-        body: screens[index],
-        bottomNavigationBar: NavigationBarTheme(
-          data: NavigationBarThemeData(
-            indicatorColor: Colors.white,
-          ),
-          child: NavigationBar(
-            backgroundColor: Color.fromARGB(255, 163, 232, 84),
-            selectedIndex: index,
-            onDestinationSelected: (index) => setState(
-              () {
-                this.index = index;
-              },
-            ),
-            height: 70,
-            destinations: [
-              NavigationDestination(
-                icon: Icon(Icons.edit),
-                label: 'Uredi',
-              ),
-              NavigationDestination(
-                icon: Icon(Icons.home),
-                label: 'Početna',
-              ),
-              NavigationDestination(
-                icon: Icon(Icons.calendar_month),
-                label: 'Kalendar',
+        centerTitle: true,
+        leading: Container(
+          color: const Color.fromARGB(255, 163, 232, 84),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: SvgPicture.asset('assets/icons/fi-rs-user.svg'),
               ),
             ],
           ),
-        ));
+        ),
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                '/opg-settings',
+              );
+            },
+            icon: SvgPicture.asset('assets/icons/fi-rs-settings.svg'),
+          ),
+        ],
+      ),
+      body: Text(''),
+    );
   }
 }
