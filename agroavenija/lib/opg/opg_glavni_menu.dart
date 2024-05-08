@@ -39,6 +39,10 @@ class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
         ),
         actions: <Widget>[
           IconButton(
+            icon: Icon(Icons.edit),
+            onPressed: () {},
+          ),
+          IconButton(
             onPressed: () {
               Navigator.pushNamed(
                 context,
@@ -49,7 +53,51 @@ class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
           ),
         ],
       ),
-      body: Text(''),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: EdgeInsets.all(16.0),
+        childAspectRatio: 8.0 / 9.0,
+        children: <Widget>[
+          _buildGridCard('Termin degustacije', Icons.calendar_today, context),
+          _buildGridCard('Smještaj', Icons.hotel, context),
+          _buildGridCard('Proizvodi', Icons.local_florist, context),
+          _buildGridCard('Profil OPG-a', Icons.account_balance, context),
+        ],
+      ),
+    );
+  }
+
+  Card _buildGridCard(String title, IconData icon, BuildContext context) {
+    return Card(
+      clipBehavior: Clip.antiAlias,
+      // Apply shadow around the card
+      elevation: 4.0,
+      child: InkWell(
+        onTap: () {
+          // Handle card tap
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text('Tapped on $title')),
+          );
+        },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(icon, size: 48.0, color: Colors.black54),
+            Container(
+              padding: EdgeInsets.only(top: 8.0),
+              child: Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 16.0,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

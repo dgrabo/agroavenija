@@ -2,7 +2,7 @@ import 'package:agroavenija/common.dart';
 import 'package:flutter/material.dart';
 // import 'registracija_kupac.dart';
 // import 'registracija_opg.dart';
-import 'kupac/registracija_kupac.dart' as regkupac;
+// import 'kupac/registracija_kupac.dart' as regkupac;
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -132,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                           ScaffoldMessenger.of(context)
                               .showSnackBar(const SnackBar(
                             content: Text('Success. Confirm your account.'),
-                            backgroundColor: Colors.greenAccent,
+                            backgroundColor: Color.fromARGB(255, 163, 232, 84),
                           ));
                           setState(() {
                             _signUpLoading = false;
@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 children: [
                   Checkbox(
-                    activeColor: Colors.green,
+                    activeColor: Color.fromARGB(255, 163, 232, 84),
                     value: isCheckedKupac,
                     onChanged: (bool? newValue) {
                       setState(() {
@@ -233,7 +233,8 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // background color
+                      backgroundColor:
+                          Color.fromARGB(255, 163, 232, 84), // background color
                       shape: RoundedRectangleBorder(
                         borderRadius:
                             BorderRadius.circular(30.0), // rounded corners
@@ -334,7 +335,7 @@ class _LoginPageState extends State<LoginPage> {
           Row(
             children: [
               Checkbox(
-                activeColor: Colors.green,
+                activeColor: Color.fromARGB(255, 163, 232, 84),
                 value: isCheckedOPG,
                 onChanged: (bool? newValue) {
                   setState(() {
@@ -363,7 +364,8 @@ class _LoginPageState extends State<LoginPage> {
         width: double.infinity,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.green, // background color
+            backgroundColor:
+                Color.fromARGB(255, 163, 232, 84), // background color
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(30.0), // rounded corners
             ),
@@ -388,11 +390,14 @@ class _LoginPageState extends State<LoginPage> {
   Widget buildElevatedButton(String text, bool isActive) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: isActive ? Colors.green : Colors.white,
+        backgroundColor:
+            isActive ? Color.fromARGB(255, 163, 232, 84) : Colors.white,
         foregroundColor: isActive ? Colors.white : Colors.black,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(30.0),
-          side: BorderSide(color: isActive ? Colors.green : Colors.grey),
+          side: BorderSide(
+              color:
+                  isActive ? Color.fromARGB(255, 163, 232, 84) : Colors.grey),
         ),
         padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
       ),
