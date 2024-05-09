@@ -85,13 +85,19 @@ class _OpgSettingsState extends State<OpgSettings> {
             SizedBox(height: 16.0),
             TextFormField(
               decoration: InputDecoration(
-                labelText: 'Ime i prezime',
+                labelText: 'Ime',
               ),
             ),
             SizedBox(height: 16.0),
             TextFormField(
               decoration: InputDecoration(
-                labelText: 'e-mail',
+                labelText: 'Prezime',
+              ),
+            ),
+            SizedBox(height: 16.0),
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: 'E-mail',
               ),
             ),
             SizedBox(height: 16.0),

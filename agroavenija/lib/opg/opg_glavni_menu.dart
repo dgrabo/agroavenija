@@ -53,31 +53,56 @@ class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
           ),
         ],
       ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        padding: EdgeInsets.all(16.0),
-        childAspectRatio: 8.0 / 9.0,
-        children: <Widget>[
-          _buildGridCard('Termin degustacije', Icons.calendar_today, context),
-          _buildGridCard('Smještaj', Icons.hotel, context),
-          _buildGridCard('Proizvodi', Icons.local_florist, context),
-          _buildGridCard('Profil OPG-a', Icons.account_balance, context),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              'Uređivanje OPG-a',
+              style: TextStyle(
+                fontSize: 24.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: EdgeInsets.all(16.0),
+              childAspectRatio: 8.0 / 9.0,
+              children: <Widget>[
+                _buildGridCard(
+                    'Termin degustacije', Icons.calendar_today, context),
+                _buildGridCard('Smještaj', Icons.hotel, context),
+                _buildGridCard('Proizvodi', Icons.local_florist, context,
+                    showPopUp: true),
+                _buildGridCard('Profil OPG-a', Icons.account_balance, context),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
 
-  Card _buildGridCard(String title, IconData icon, BuildContext context) {
+  Card _buildGridCard(String title, IconData icon, BuildContext context,
+      {bool showPopUp = false}) {
     return Card(
       clipBehavior: Clip.antiAlias,
       // Apply shadow around the card
       elevation: 4.0,
       child: InkWell(
         onTap: () {
-          // Handle card tap
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text('Tapped on $title')),
-          );
+          if (showPopUp) {
+            _showDialog(context);
+          } else {
+            // Handle card tap
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Tapped on $title'),
+              ),
+            );
+          }
         },
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,6 +123,29 @@ class _OpgGlavniMenuState extends State<OpgGlavniMenu> {
           ],
         ),
       ),
+    );
+  }
+
+  void _showDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Proizvodi OPG-a'),
+          content: Text('Presadnice za začinsko bilje.'),
+          actions: <Widget>[
+            TextButton(
+              child: Text(
+                'Zatvori',
+                style: TextStyle(color: Colors.black),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(); // Zatvara dialog
+              },
+            ),
+          ],
+        );
+      },
     );
   }
 }

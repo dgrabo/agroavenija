@@ -69,7 +69,7 @@ class _KupacMenuState extends State<KupacMenu> {
                           borderRadius: BorderRadius.circular(20),
                         ),
                         filled: true,
-                        fillColor: Colors.green.shade100,
+                        fillColor: Color.fromARGB(255, 163, 232, 84),
                       ),
                     ),
                   ),
@@ -99,9 +99,9 @@ class _KupacMenuState extends State<KupacMenu> {
                   ),
                   // GridView.builder(
                   //   physics:
-                  //       NeverScrollableScrollPhysics(), 
-                  //   shrinkWrap: true, 
-                  //   itemCount: 8, 
+                  //       NeverScrollableScrollPhysics(),
+                  //   shrinkWrap: true,
+                  //   itemCount: 8,
                   //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   //     crossAxisCount: 4,
                   //     childAspectRatio: 4 / 2,
@@ -181,24 +181,21 @@ class _KupacMenuState extends State<KupacMenu> {
                         padding: const EdgeInsets.only(left: 28.0),
                         child: GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, '/kupac-settings');
+                            ;
                           },
                           child: Card(
-                            color: Colors.lightGreen[
-                                100], // background color of the card
+                            color: Color.fromARGB(255, 163, 232,
+                                84), // background color of the card
                             child: SizedBox(
                               width: 200,
                               height: 150,
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  Expanded(
-                                      child: Image.asset(
-                                          'assets/images/agroavenija-logo.png')),
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Text(
-                                      'OPG #1',
+                                      'OPG PERO \nPresadnice za začinsko bilje\n091 555 333\n',
                                       style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
@@ -212,23 +209,42 @@ class _KupacMenuState extends State<KupacMenu> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: EdgeInsets.all(10.0),
-                        child: OutlinedButton(
-                          onPressed: () async {
-                            await client.auth.signOut();
-                          },
-                          child: Text(
-                            'Sign out',
-                            style: TextStyle(
-                                fontSize: 15, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                      )
+                      // Padding(
+                      //   padding: EdgeInsets.all(10.0),
+                      //   child: OutlinedButton(
+                      //     onPressed: () async {
+                      //       await client.auth.signOut();
+                      //     },
+                      //     child: Text(
+                      //       'Sign out',
+                      //       style: TextStyle(
+                      //           fontSize: 15, fontWeight: FontWeight.bold),
+                      //     ),
+                      //   ),
+                      // )
                     ],
                   ),
                   SizedBox(
                     height: 30,
+                  ),
+                  Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 34.0),
+                        child: TextButton(
+                          onPressed: () async {
+                            await client.auth.signOut();
+                          },
+                          child: Text(
+                            'Odjava',
+                            style: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                        ),
+                      ),
+                    ],
                   )
                 ],
               ),
